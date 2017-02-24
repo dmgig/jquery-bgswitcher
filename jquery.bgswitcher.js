@@ -1,10 +1,12 @@
 /*!
  * jQuery.BgSwitcher
  *
- * @version  0.4.3
+ * @version  0.4.3#living-language
  * @author   rewish <rewish.org@gmail.com>
  * @license  MIT License (https://github.com/rewish/jquery-bgswitcher/blob/master/LICENSE.md)
  * @link     https://github.com/rewish/jquery-bgswitcher
+ *
+ * dmgig.com added callback methods
  */
 (function($) {
   'use strict';
@@ -222,6 +224,7 @@
      */
     switching: function() {
       var started = !!this._timerID;
+      this.$el.trigger('switchstart', [this.index]);
 
       if (started) {
         this.stop();
@@ -234,6 +237,7 @@
       if (started) {
         this.start();
       }
+      this.$el.trigger('switchcomplete', [this.index]);
     },
 
     /**
