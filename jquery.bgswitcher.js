@@ -274,8 +274,8 @@
           copiedStyles = {
             top: offset.top,
             left: offset.left,
-            width: this.$el.innerWidth(),
-            height: this.$el.innerHeight()
+            width: $('.ll_module-home-hero').innerWidth(),
+            height: $('.ll_module-home-hero').outerHeight()
           };
 
       for (; i < length; i++) {
